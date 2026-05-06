@@ -127,38 +127,39 @@ def main():
     n = 25 + variant
     random_numbers = [random.randint(-50, 50) for _ in range(n)]
     
-    print(f"Згенеровані числа ({n} шт): {random_numbers} - ASD_6.py:130")
+    print(f"Згенеровані числа ({n} шт): {random_numbers}")
     for num in random_numbers:
         bst.insert(num)
 
-    print("\n Вміст дерева (візуально) - ASD_6.py:134")
+    print("\n Вміст дерева (візуально):")
     bst.print_tree()
 
-    print("\n Відсортований вміст дерева (Inorder) - ASD_6.py:137")
-    print(", - ASD_6.py:138".join(bst.get_inorder()))
+    print("\n Відсортований вміст дерева (Inorder):")
+    print(", ".join(bst.get_inorder()))
 
     # Додавання елемента
     new_element = 100
     bst.insert(new_element)
-    print(f"\n Після додавання елемента {new_element} - ASD_6.py:143")
-    print(", - ASD_6.py:144".join(bst.get_inorder()))
+    print(f"\n Після додавання елемента {new_element}:")
+    print(", ".join(bst.get_inorder()))
 
     # Видалення елемента
     delete_element = random_numbers[0] # Видалимо перше згенероване число
     bst.delete(delete_element)
-    print(f"\n Після видалення елемента {delete_element} - ASD_6.py:149")
-    print(", - ASD_6.py:150".join(bst.get_inorder()))
+    print(f"\n Після видалення елемента {delete_element}:")
+    print(", ".join(bst.get_inorder()))
 
     # Виконання додаткових операцій згідно з варіантом 5
-    print("\n Перевірка на майже повне дерево - ASD_6.py:153")
+    print("\n Перевірка на майже повне дерево:")
     is_complete = bst.is_almost_complete()
-    print("Дерево є майже повним! - ASD_6.py:155" if is_complete else "Дерево НЕ є майже повним.")
+    print("Дерево є майже повним!" if is_complete else "Дерево НЕ є майже повним.")
 
-    print("\n Множення всіх елементів на 2 - ASD_6.py:157")
+    print("\n Множення всіх елементів на 2:")
     bst.multiply_by_two()
-    print("Дерево після множення (відсортоване): - ASD_6.py:159")
-    print(", - ASD_6.py:160".join(bst.get_inorder()))
+    print("Дерево після множення (відсортоване):")
+    print(", ".join(bst.get_inorder()))
 
 
 if __name__ == "__main__":
     main()
+    
